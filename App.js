@@ -31,7 +31,15 @@ export default function App() {
     <View>
       <Header />
       <Search />
-      <CategoryItem />
+      <CategoryItem
+      name="Burger"
+      />
+      <CategoryItem
+      name="Pizza"
+      />
+       <CategoryItem
+      name="Dessert"
+      />
       <StatusBar/>
     </View>
   )

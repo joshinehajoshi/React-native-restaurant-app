@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import { elevation } from "../common/styles";
 
-export default function CategoryItem() {
+export default function CategoryItem(props) {
+    console.log(props);
     return (
         <View style={[styles.container, styles.elevation]}>
             <View style={styles.imageContainer}>
                 <Image source={require("../assests/images/hamburger.png")} />
             </View>
             <Text style={styles.header}>
-                Burger
+                {props.name}
             </Text>
         </View>
     )
