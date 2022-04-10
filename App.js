@@ -22,12 +22,14 @@
 import { StatusBar } from "expo-status-bar"
 import {View, Text, StyleSheet} from "react-native"
 import Header from "./src/components/Header"
+import Search from "./src/components/Search"
 
 
 export default function App() {
   return (
     <View>
       <Header />
+      <Search />
       <Text>App Content</Text>
       <StatusBar/>
     </View>
