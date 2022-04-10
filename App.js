@@ -26,24 +26,10 @@ import Header from "./src/components/Header"
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View>
       <Header />
       <Text>App Content</Text>
-      <StatusBar style={styles.containerOne}/>
+      <StatusBar/>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: "black",
-    // color: "white",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff"
-  },
-  containerOne: {
-    backgroundColor: "#fff"
-  }
-})
