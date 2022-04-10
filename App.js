@@ -19,6 +19,7 @@
 //   },
 // });
 
+import { StatusBar } from "expo-status-bar"
 import {View, Text, StyleSheet, TouchableWithoutFeedbackBase} from "react-native"
 
 
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>App Content</Text>
+      <StatusBar style={styles.containerOne}/>
     </View>
   )
 }
@@ -36,6 +38,10 @@ const styles = StyleSheet.create({
     // backgroundColor: "black",
     // color: "white",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "#fff"
+  },
+  containerOne: {
+    backgroundColor: "#fff"
   }
 })
