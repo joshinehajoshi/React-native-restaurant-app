@@ -1,47 +1,59 @@
-// import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
 import { StatusBar } from "expo-status-bar"
-import {View, Text, StyleSheet} from "react-native"
+import {View,StyleSheet, FlatList, Text} from "react-native"
 import CategoryItem from "./src/components/CategoryItem"
 import Header from "./src/components/Header"
 import Search from "./src/components/Search"
 
 
 export default function App() {
+
+  const commonCategories = [
+    {
+      id: 1,
+      name: "Burger",
+      imageUrl: require("./src/assets/images/hamburger.png")
+    },
+    {
+      id: 2,
+      name: "Pizza",
+      imageUrl: require("./src/assets/images/pizza.png")
+    },
+    {
+      id: 3,
+      name: "Dessert",
+      imageUrl: require("./src/assets/images/smoothie.png")
+    },
+    {
+      id: 4,
+      name: "Meat",
+      imageUrl: require("./src/assets/images/meat.png")
+    },
+    {
+      id: 5,
+      name: "Pasta",
+      imageUrl: require("./src/assets/images/pasta.png")
+    },
+    {
+      id: 6,
+      name: "Cake",
+      imageUrl: require("./src/assets/images/cake.png")
+    },
+    
+  ]
   return (
     <View>
       <Header />
       <Search />
-      <CategoryItem
-      name="Burger"
-      imageUrl={require("./src/assets/images/hamburger.png")}
-      />
-      <CategoryItem
-      name="Pizza"
-      imageUrl={require("./src/assets/images/pizza.png")}
-      />
-       <CategoryItem
-      name="Dessert"
-      imageUrl={require("./src/assets/images/smoothie.png")}
+      <FlatList
+      data={commonCategories}
+      renderItem={({item}) => {
+        console.log(item);
+        return <CategoryItem 
+        name={item.name} 
+        imageUrl={item.imageUrl}
+         />
+      }}
+      horizontal
       />
       <StatusBar/>
     </View>
