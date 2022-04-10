@@ -9,32 +9,26 @@ export default function App() {
 
   const commonCategories = [
     {
-      id: 1,
       name: "Burger",
       imageUrl: require("./src/assets/images/hamburger.png")
     },
     {
-      id: 2,
       name: "Pizza",
       imageUrl: require("./src/assets/images/pizza.png")
     },
     {
-      id: 3,
       name: "Dessert",
       imageUrl: require("./src/assets/images/smoothie.png")
     },
     {
-      id: 4,
       name: "Meat",
       imageUrl: require("./src/assets/images/meat.png")
     },
     {
-      id: 5,
       name: "Pasta",
       imageUrl: require("./src/assets/images/pasta.png")
     },
     {
-      id: 6,
       name: "Cake",
       imageUrl: require("./src/assets/images/cake.png")
     },
@@ -44,19 +38,31 @@ export default function App() {
     <View>
       <Header />
       <Search />
-      <FlatList
-      data={commonCategories}
-      renderItem={({item}) => {
-        console.log(item);
-        return <CategoryItem 
-        name={item.name} 
-        imageUrl={item.imageUrl}
-         />
-      }}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      />
+      <View style={styles.container}>
+        <FlatList
+        data={commonCategories}
+        renderItem={({item, index}) => {
+          console.log(item);
+          return <CategoryItem 
+          name={item.name} 
+          imageUrl={item.imageUrl}
+          index= {index}
+          />
+        }}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(category) => category.name}
+        />
+      </View>
+     
       <StatusBar/>
     </View>
   )
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 25
+  }
+})
