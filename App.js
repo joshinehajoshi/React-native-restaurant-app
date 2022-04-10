@@ -33,12 +33,15 @@ export default function App() {
       <Search />
       <CategoryItem
       name="Burger"
+      imageUrl={require("./src/assets/images/hamburger.png")}
       />
       <CategoryItem
       name="Pizza"
+      imageUrl={require("./src/assets/images/pizza.png")}
       />
        <CategoryItem
       name="Dessert"
+      imageUrl={require("./src/assets/images/smoothie.png")}
       />
       <StatusBar/>
     </View>
