@@ -54,6 +54,7 @@ export default function App() {
          />
       }}
       horizontal
+      showsHorizontalScrollIndicator={false}
       />
       <StatusBar/>
     </View>
