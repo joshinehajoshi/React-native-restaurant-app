@@ -20,12 +20,14 @@
 // });
 
 import { StatusBar } from "expo-status-bar"
-import {View, Text, StyleSheet, TouchableWithoutFeedbackBase} from "react-native"
+import {View, Text, StyleSheet} from "react-native"
+import Header from "./src/components/Header"
 
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Header />
       <Text>App Content</Text>
       <StatusBar style={styles.containerOne}/>
     </View>
