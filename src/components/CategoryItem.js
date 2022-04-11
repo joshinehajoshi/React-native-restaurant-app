@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
 import { elevation } from "../common/styles";
 
-export default function CategoryItem({ name, imageUrl, index, active }) {
+export default function CategoryItem({ name, imageUrl, index, active, onPress }) {
     return (
+        <TouchableOpacity>
         <View 
         style={[styles.container, 
         styles.elevation, 
         index===0 ? {marginLeft: 25} : {marginLeft: 10},
-        active ? {backgroundColor: rgb(256,234,100)} : {backgroundColor: "white"}
+        active ? {backgroundColor: "orange"} : {backgroundColor: "white"}
         ]}>
             <View style={styles.imageContainer}>
                 <Image source={imageUrl} />
@@ -16,6 +17,7 @@ export default function CategoryItem({ name, imageUrl, index, active }) {
                 {name}
             </Text>
         </View>
+        </TouchableOpacity>
     )
 }
 
