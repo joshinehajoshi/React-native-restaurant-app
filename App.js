@@ -40,7 +40,9 @@ export default function App() {
   return (
     <View>
       <Header />
-      <Search />
+      <Search 
+      setTerm={setTerm}
+      />
       <View style={styles.container}>
         <FlatList
         data={commonCategories}
