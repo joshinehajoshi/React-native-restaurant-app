@@ -3,6 +3,7 @@ import { useState } from "react";
 import {View,StyleSheet} from "react-native";
 import Categories from "./src/components/Categories";
 import Header from "./src/components/Header";
+import Restaurants from "./src/components/Restaurants";
 import Search from "./src/components/Search";
 
 
@@ -51,6 +52,7 @@ export default function App() {
        categories={commonCategories}
        setTerm={setTerm} />
       </View>
+      <Restaurants />
      
       <StatusBar/>
     </View>
