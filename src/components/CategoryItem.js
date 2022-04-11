@@ -1,9 +1,14 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import { elevation } from "../common/styles";
 
-export default function CategoryItem({ name, imageUrl, index }) {
+export default function CategoryItem({ name, imageUrl, index, active }) {
     return (
-        <View style={[styles.container, styles.elevation, index===0 ? {marginLeft: 25} : {marginLeft: 10}]}>
+        <View 
+        style={[styles.container, 
+        styles.elevation, 
+        index===0 ? {marginLeft: 25} : {marginLeft: 10},
+        active ? {backgroundColor: rgb(256,234,100)} : {backgroundColor: "white"}
+        ]}>
             <View style={styles.imageContainer}>
                 <Image source={imageUrl} />
             </View>
