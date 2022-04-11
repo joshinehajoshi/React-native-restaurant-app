@@ -51,7 +51,7 @@ export default function App() {
           imageUrl={item.imageUrl}
           index= {index}
           active = {item.name === term}
-          onPress = {() => setTerm(item.name)}
+          handlePress = {() => setTerm(item.name)}
           />
         }}
         horizontal
